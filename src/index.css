@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/* Google Fonts loaded via <link> in index.html */
+
+/* ===== Terminal / Hacker Theme (Homepage + Blog) ===== */
+.terminal-theme {
+  --bg-color: #0c0c0c;
+  --text-primary: #cccccc;
+  --text-secondary: #888888;
+  --accent-color: #00ff41;
+  --accent-hover: #00cc33;
+  --error-color: #ff3333;
+  --border-color: #333333;
+  --font-mono: 'Fira Code', 'Courier New', Courier, monospace;
+  --terminal-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  line-height: 1.6;
+  overflow-x: hidden;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.terminal-theme::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
+
+.terminal-theme a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+  border-bottom: 1px dashed var(--text-secondary);
+}
+
+.terminal-theme a:hover {
+  color: var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+  text-shadow: 0 0 5px var(--accent-color);
+}
+
+.terminal-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+}
+
+.terminal-theme h1, .terminal-theme h2, .terminal-theme h3,
+.terminal-theme h4, .terminal-theme h5, .terminal-theme h6 {
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1.2em;
+  background-color: #00ff41;
+  animation: blink 1s step-end infinite;
+  vertical-align: text-bottom;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
